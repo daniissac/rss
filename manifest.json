@@ -1,0 +1,18 @@
+{
+  "name": "Feedwave",
+  "short_name": "Feedwave",
+  "description": "A minimal RSS feed reader",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2196F3",
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

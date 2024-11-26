@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedwave</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./styles.css">
+    <meta name="theme-color" content="#2196F3">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <div class="header-left">
+                <h1>Feedwave</h1>
+            </div>
+            <button id="addFeed" aria-label="Add Feed">+</button>
+        </header>
+
+        <div class="modal" id="addFeedModal">
+            <div class="modal-content">
+                <h2>Add RSS Feed</h2>
+                <input type="url" id="feedUrl" placeholder="Enter RSS feed URL">
+                <div class="modal-buttons">
+                    <button id="cancelAdd">Cancel</button>
+                    <button id="confirmAdd">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <div class="feeds-list" id="feedsList">
+                <div class="feed-item all-feeds active" id="allFeeds">
+                    <h3>All Feeds</h3>
+                    <p>View articles from all your feeds</p>
+                </div>
+                <div id="individualFeeds">
+                    <!-- Individual feeds will be listed here -->
+                </div>
+            </div>
+            <div class="articles" id="articles">
+                <!-- Articles will be displayed here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="./app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(registration => console.log('ServiceWorker registered'))
+                .catch(error => console.log('ServiceWorker registration failed:', error));
+        }
+    </script>
+</body>
+</html>
